@@ -1,4 +1,6 @@
+import 'package:appstore/features/base/controllers/base_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DrawerTile extends StatelessWidget {
   final IconData icon;
@@ -10,8 +12,12 @@ class DrawerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final int currentPage = context.watch<BaseController>().page;
+
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        context.read<BaseController>().setPage(page);
+      },
       child: SizedBox(
         height: 45,
         child: Row(
@@ -19,7 +25,7 @@ class DrawerTile extends StatelessWidget {
             Icon(
               icon,
               size: 32,
-              color: Colors.grey[700],
+              color: currentPage == page ? Colors.blue : Colors.grey[700],
             ),
             const SizedBox(
               width: 32,
@@ -28,7 +34,7 @@ class DrawerTile extends StatelessWidget {
               text,
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.grey[700],
+                color: currentPage == page ? Colors.blue : Colors.grey[700],
               ),
             ),
           ],
