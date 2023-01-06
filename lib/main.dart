@@ -1,4 +1,7 @@
-import 'package:appstore/core/app_widget.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const AppWidget());
+import 'core/app_widget.dart';
+
+Future<void> main() async {
+  runApp(const AppWidget());
+}
