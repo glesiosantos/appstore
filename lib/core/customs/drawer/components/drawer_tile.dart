@@ -1,3 +1,4 @@
+import 'package:appstore/core/constants/app_colors.dart';
 import 'package:appstore/features/base/controllers/base_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +26,9 @@ class DrawerTile extends StatelessWidget {
             Icon(
               icon,
               size: 32,
-              color: currentPage == page ? Colors.blue : Colors.grey[700],
+              color: currentPage == page
+                  ? AppColors.primaryColor
+                  : Colors.grey[700],
             ),
             const SizedBox(
               width: 32,
@@ -34,7 +37,9 @@ class DrawerTile extends StatelessWidget {
               text,
               style: TextStyle(
                 fontSize: 16,
-                color: currentPage == page ? Colors.blue : Colors.grey[700],
+                color: currentPage == page
+                    ? AppColors.primaryColor
+                    : Colors.grey[700],
               ),
             ),
           ],

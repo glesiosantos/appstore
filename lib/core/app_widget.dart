@@ -1,4 +1,5 @@
-import 'package:appstore/features/base/screen/base_screen.dart';
+import 'package:appstore/core/constants/app_theme.dart';
+import 'package:appstore/features/auth/signin/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
@@ -10,7 +11,8 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'App Store',
-      home: BaseScreen(),
+      theme: AppTheme.themeData,
+      home: SignInScreen(),
       // initialRoute: ,
       // routes: ,
     );
